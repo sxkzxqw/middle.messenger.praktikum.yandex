@@ -1,5 +1,9 @@
-<input type="{{inputType}}" class="input input__{{type}} {{extraClass}}" />
-
-<button class="button button__{{type}} {{extraClass}}" type="{{buttonType}}">
-  {{text}}
-</button>
+<div class="input__container">
+  {{#if label}}
+  <label class="input__label" for="{{name}}">{{label}}</label>
+  {{/if}}
+  <input type="{{type}}" class="input {{extraClass}}" placeholder="{{placeholder}}" name="{{name}}" />
+  {{#if error}}
+  <p class="input__error">{{error}}</p>
+  {{/if}}
+</div>

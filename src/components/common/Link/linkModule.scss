@@ -1,0 +1,10 @@
+.link {
+  color: var(--blue);
+  cursor: pointer;
+
+  transition: all .15s linear;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

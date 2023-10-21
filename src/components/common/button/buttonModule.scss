@@ -3,16 +3,14 @@
   border-radius: 1rem;
   padding: 1rem;
   border: 1px solid var(--black);
-  background: var(--white);
-  color: var(--blue);
-  transition: all .3s linear;
+  background: var(--blue);
+  color: var(--white);
+  transition: all .15s linear;
   border: none;
   cursor: pointer;
 
   &:hover {
-    opacity: 0.8;
-    color: var(--white);
-    background: var(--blue);
+    background: var(--blue-hovered);
   }
 }
 
