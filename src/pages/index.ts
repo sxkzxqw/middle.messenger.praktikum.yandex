@@ -1,0 +1,1 @@
+export { ErrorPage, LoginPage, RegisterPage } from './CommonPages';
