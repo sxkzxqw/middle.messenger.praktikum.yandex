@@ -1,0 +1,21 @@
+.sidebar__link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+
+  .sidebar__right-icon {
+    transform: scale(1.2);
+  }
+
+  .sidebar__heading-text {
+    color: var(--dark-gray);
+    user-select: none;
+  }
+}
+
+.sidebar__heading {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}

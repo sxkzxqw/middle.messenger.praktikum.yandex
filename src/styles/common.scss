@@ -28,6 +28,33 @@
   text-align: center;
 }
 
+.link-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mx-a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.typo_h1 {
+  font-size: 5rem;
+  line-height: 5rem;
+  font-weight: 400;
+}
+
+.typo_h2 {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.min_modal_width {
+  max-width: 440px;
+  width: 100%;
+}
+
 .percent-center {
   height: 100%;
   width: 100%;
@@ -50,7 +77,7 @@
 }
 
 .title {
-  line-height: 20px;
+  line-height: 2.4rem;
   font-size: 2rem;
   font-weight: 500;
 }

@@ -1,0 +1,24 @@
+.profile__aside {
+  position: absolute;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 4rem;
+  left: 0;
+  border-right: 1px solid var(--gray);
+  cursor: pointer;
+}
+
+.profile__aside__button {
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+  background: var(--blue);
+  cursor: pointer;
+}

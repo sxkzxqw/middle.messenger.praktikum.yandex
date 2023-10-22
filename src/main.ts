@@ -3,7 +3,11 @@ import * as Components from './components';
 import * as Pages from './pages';
 import './styles/main.scss';
 
-export interface IPage {
+
+Object.entries(Components).forEach(([name, component]) => {
+  Handlebars.registerPartial(name, component);
+})
+interface IPage {
   path: string;
   component: string;
   context?: {
@@ -46,29 +50,28 @@ const pages: IPage[] = [
   }
 ];
 
-Object.entries(Components).forEach(([name, component]) => {
-  Handlebars.registerPartial(name, component);
-})
-
-const navigate = (path: string) => {
+const router = (path: string) => {
   const root = document.querySelector('#root');
   if (root) {
     const pageItem = pages.find(page => page.path === path);
-
+    window.history.pushState({}, '', path)
     if (pageItem) {
       root.innerHTML = Handlebars.compile(pageItem.component)(pageItem.context);
     }
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => navigate('/register'));
+window.onload = () => {
+  router('/chats')
+}
+
 document.addEventListener('click', (e: MouseEvent) => {
   if (!e.target) return;
 
   const pagePath = (e.target as HTMLElement).getAttribute('to');
   if (!pagePath) return;
 
-  navigate(pagePath);
+  router(pagePath);
 
   e.preventDefault();
 });
