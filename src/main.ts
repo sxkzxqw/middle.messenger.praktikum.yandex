@@ -3,11 +3,11 @@ import * as Components from './components';
 import * as Pages from './pages';
 import './styles/main.scss';
 
-
 Object.entries(Components).forEach(([name, component]) => {
   Handlebars.registerPartial(name, component);
 })
-interface IPage {
+
+interface IRoute {
   path: string;
   component: string;
   context?: {
@@ -15,7 +15,7 @@ interface IPage {
   };
 };
 
-const pages: IPage[] = [
+const routes: IRoute[] = [
   {
     path: '/login',
     component: Pages.LoginPage
@@ -52,8 +52,35 @@ const pages: IPage[] = [
 
 const router = (path: string) => {
   const root = document.querySelector('#root');
+  // временная мера для отображения модалок
+  if (path === '/profile') {
+    setTimeout(() => {
+      const avatar = document.querySelector('#profile-change-image');
+      const changeData = document.querySelector('#profile-change-data');
+      const changePassword = document.querySelector('#profile-change-password');
+      const closeButton = document.querySelectorAll('.modal__close-button');
+
+      avatar?.addEventListener('click', () => {
+        document.querySelector('#changeUserAvatarModal')?.classList.add('modal_opened');
+      })
+      changeData?.addEventListener('click', () => {
+        document.querySelector('#changeUserDataModal')?.classList.add('modal_opened');
+      });
+      changePassword?.addEventListener('click', () => {
+        document.querySelector('#changeUserPasswordModal')?.classList.add('modal_opened');
+      });
+
+      closeButton?.forEach((button) => {
+        button.addEventListener('click', () => {
+          document.querySelector('#changeUserPasswordModal')?.classList.remove('modal_opened');
+          document.querySelector('#changeUserDataModal')?.classList.remove('modal_opened');
+          document.querySelector('#changeUserAvatarModal')?.classList.remove('modal_opened');
+        });
+      })
+    }, 1000);
+  }
   if (root) {
-    const pageItem = pages.find(page => page.path === path);
+    const pageItem = routes.find(route => route.path === path);
     window.history.pushState({}, '', path)
     if (pageItem) {
       root.innerHTML = Handlebars.compile(pageItem.component)(pageItem.context);
@@ -68,10 +95,10 @@ window.onload = () => {
 document.addEventListener('click', (e: MouseEvent) => {
   if (!e.target) return;
 
-  const pagePath = (e.target as HTMLElement).getAttribute('to');
-  if (!pagePath) return;
+  const routePath = (e.target as HTMLElement).getAttribute('to');
+  if (!routePath) return;
 
-  router(pagePath);
+  router(routePath);
 
   e.preventDefault();
 });

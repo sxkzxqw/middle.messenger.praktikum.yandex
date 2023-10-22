@@ -1,3 +1,3 @@
 declare module "handlebars" {
-  export function compile(template: string): (context: any) => string;
+  export function compile(template: string): (context: { [key: string]: string; } | undefined) => string;
 }
