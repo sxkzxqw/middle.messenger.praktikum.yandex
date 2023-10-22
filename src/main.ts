@@ -77,7 +77,7 @@ const router = (path: string) => {
           document.querySelector('#changeUserAvatarModal')?.classList.remove('modal_opened');
         });
       })
-    }, 1000);
+    }, 200);
   }
   if (root) {
     const pageItem = routes.find(route => route.path === path);
