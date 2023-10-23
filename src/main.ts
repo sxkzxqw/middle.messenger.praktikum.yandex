@@ -1,7 +1,8 @@
-import Handlebars from 'handlebars';
-import * as Components from './components';
-import * as Pages from './pages';
 import './styles/main.scss';
+import Handlebars from 'handlebars';
+import * as Pages from './pages';
+import * as Components from './components';
+
 
 Object.entries(Components).forEach(([name, component]) => {
   Handlebars.registerPartial(name, component);
