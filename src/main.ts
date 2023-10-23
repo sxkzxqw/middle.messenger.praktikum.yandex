@@ -10,7 +10,7 @@ Object.entries(Components).forEach(([name, component]) => {
 
 interface IRoute {
   path: string;
-  component: string;
+  component: any;
   context?: {
     [key: string]: string;
   };
