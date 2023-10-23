@@ -1,0 +1,8 @@
+<li class="profile__field {{extraClass}}">
+  {{#if asLink}}
+  {{> Link text=text extraClass=extraClassLink to=to id=id}}
+  {{else}}
+  <span class="profile__field-name">{{label}}</span>
+  <p class="profile__field-info">{{info}}</p>
+  {{/if}}
+</li>

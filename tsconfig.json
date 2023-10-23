@@ -19,11 +19,7 @@
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": false,
-    "typeRoots": [
-      "./src/types/types-declaration.d.ts",
-      "./src/types/handlebars.d.ts"
-    ]
+    "noFallthroughCasesInSwitch": true,
   },
   "include": [
     "src"
