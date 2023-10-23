@@ -10,12 +10,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/handlebars": "^4.1.0",
+    "@types/node": "^20.8.7",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "@types/handlebars": "^4.1.0",
-    "@types/node": "^20.8.6",
     "express": "^4.18.2",
     "handlebars": "^4.7.8",
     "rollup-plugin-copy": "^3.5.0",

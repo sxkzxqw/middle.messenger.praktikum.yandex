@@ -16,7 +16,7 @@
     <ul class="profile__data-fields">
       {{> ProfileDataField id='profile-change-data' asLink=true text='Изменить данные' }}
       {{> ProfileDataField id='profile-change-password' asLink=true text='Изменить пароль' }}
-      {{> ProfileDataField asLink=true to='/login' extraClassLink='profile__logout-link' text='Выйти' }}
+      {{> ProfileDataField asLink=true to='/login' extraClassLink='red' text='Выйти' }}
     </ul>
   </div>
   {{>ChangeUserDataModal extraClass='min_modal_width' id='changeUserDataModal'}}

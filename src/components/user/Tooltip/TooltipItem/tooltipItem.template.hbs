@@ -1,0 +1,22 @@
+{{#if asFile}}
+<li class="tooltip__action tooltip__action_file">
+  <div class="tooltip__content">
+    <input type="file" class="file-input__input" name="{{name}}" id="{{id}}" />
+    <label class="file-input__label" for="{{id}}">
+      {{#if imageUrl}}
+      <img src="{{imageUrl}}" class="tooltip__action_image" />
+      {{/if}}
+      <p class="tooltip_text">{{text}}</p>
+    </label>
+  </div>
+</li>
+{{else}}
+<li class="tooltip__action">
+  <div class="tooltip__content">
+    {{#if imageUrl}}
+    <img src="{{imageUrl}}" class="tooltip__action_image" />
+    {{/if}}
+    <p class="tooltip_text">{{text}}</p>
+  </div>
+</li>
+{{/if}}
