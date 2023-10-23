@@ -1,0 +1,12 @@
+.sidebar__chats {
+  list-style: none;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 2rem;
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+
+  .sidebar__chat:first-child {
+    border-top: none;
+  }
+}
