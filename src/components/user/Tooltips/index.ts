@@ -1,2 +1,2 @@
-export { ChatTooltip } from './ChatTooltip'
-export { UsersTooltip } from './UsersTooltip'
+export { ChatTooltip } from './chatTooltip'
+export { UsersTooltip } from './usersTooltip'

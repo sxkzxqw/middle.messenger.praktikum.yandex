@@ -4,7 +4,7 @@ export {
   SidebarSearch,
   SidebarChats,
   SidebarChat
-} from './Sidebar';
+} from './sidebar';
 export {
   ChangeAvatarModal,
   ChangePasswordModal,
@@ -15,15 +15,15 @@ export {
   ChatHeader,
   ChatContent,
   ChatFooter
-} from './Chat';
+} from './chat';
 export {
   Tooltip,
   TooltipItem
-} from './Tooltip';
+} from './tooltip';
 export {
   ChatTooltip,
   UsersTooltip,
-} from './Tooltips';
-export { BackToChats } from './BackToChats';
-export { Avatar } from './Avatar';
-export { ProfileDataField } from './ProfileDataField';
+} from './tooltips';
+export { BackToChats } from './backToChats';
+export { Avatar } from './avatar';
+export { ProfileDataField } from './profileDataField';

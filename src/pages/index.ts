@@ -1,2 +1,2 @@
-export { ErrorPage, LoginPage, RegisterPage } from './CommonPages';
-export { MainPage, ProfilePage } from './UserPages';
+export { ErrorPage, LoginPage, RegisterPage } from './commonPages';
+export { MainPage, ProfilePage } from './userPages';

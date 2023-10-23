@@ -1,6 +1,6 @@
-export { Button } from './Button';
-export { Input } from './Input';
-export { Link } from './Link';
-export { LoginForm, RegisterForm } from './Forms';
-export { Modal } from './Modal'
-export { FileInput } from './FileInput'
+export { Button } from './button';
+export { Input } from './input';
+export { Link } from './link';
+export { LoginForm, RegisterForm } from './forms';
+export { Modal } from './modal'
+export { FileInput } from './fileInput'

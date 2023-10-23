@@ -90,7 +90,7 @@ const router = (path: string) => {
 }
 
 window.onload = () => {
-  router('/chats')
+  router('/login')
 }
 
 document.addEventListener('click', (e: MouseEvent) => {
