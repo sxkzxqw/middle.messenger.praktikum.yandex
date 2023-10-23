@@ -1,2 +1,2 @@
-import './ProfilePageModule.scss';
+import './profilePageModule.scss';
 export { default as ProfilePage } from './profilePage.template.hbs?raw';
