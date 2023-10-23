@@ -9,7 +9,7 @@ export {
   ChangeAvatarModal,
   ChangePasswordModal,
   ChangeUserDataModal
-} from './Modals';
+} from './modals';
 export {
   Chat,
   ChatHeader,
