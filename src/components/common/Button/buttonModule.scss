@@ -12,6 +12,14 @@
   &:hover {
     background: var(--blue-hovered);
   }
+
+  &__red {
+    background: var(--red);
+
+    &:hover {
+      background: var(--red);
+    }
+  }
 }
 
 .button__outlined {

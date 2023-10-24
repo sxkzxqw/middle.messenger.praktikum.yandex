@@ -8,7 +8,8 @@ export {
 export {
   ChangeAvatarModal,
   ChangePasswordModal,
-  ChangeUserDataModal
+  ChangeUserDataModal,
+  UserOperationsModal,
 } from './Modals';
 export {
   Chat,

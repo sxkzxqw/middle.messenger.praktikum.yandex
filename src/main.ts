@@ -46,7 +46,7 @@ Handlebars.registerHelper('global', function (key) {
 
 interface IRoute {
   path: string;
-  component: any;
+  component: string;
   context?: {
     [key: string]: string;
   };
@@ -90,32 +90,58 @@ const routes: IRoute[] = [
 const router = (path: string) => {
   const root = document.querySelector('#root');
   // временная мера для отображения модалок
-  if (path === '/profile') {
-    setTimeout(() => {
-      const avatar = document.querySelector('#profile-change-image');
-      const changeData = document.querySelector('#profile-change-data');
-      const changePassword = document.querySelector('#profile-change-password');
-      const closeButton = document.querySelectorAll('.modal__close-button');
+  switch (path) {
+    case '/profile': {
+      setTimeout(() => {
+        const avatar = document.querySelector('#profile-change-image');
+        const changeData = document.querySelector('#profile-change-data');
+        const changePassword = document.querySelector('#profile-change-password');
+        const closeButton = document.querySelectorAll('.modal__close-button');
 
-      avatar?.addEventListener('click', () => {
-        document.querySelector('#changeUserAvatarModal')?.classList.add('modal_opened');
-      })
-      changeData?.addEventListener('click', () => {
-        document.querySelector('#changeUserDataModal')?.classList.add('modal_opened');
-      });
-      changePassword?.addEventListener('click', () => {
-        document.querySelector('#changeUserPasswordModal')?.classList.add('modal_opened');
-      });
-
-      closeButton?.forEach((button) => {
-        button.addEventListener('click', () => {
-          document.querySelector('#changeUserPasswordModal')?.classList.remove('modal_opened');
-          document.querySelector('#changeUserDataModal')?.classList.remove('modal_opened');
-          document.querySelector('#changeUserAvatarModal')?.classList.remove('modal_opened');
+        avatar?.addEventListener('click', () => {
+          document.querySelector('#changeUserAvatarModal')?.classList.add('modal_opened');
+        })
+        changeData?.addEventListener('click', () => {
+          document.querySelector('#changeUserDataModal')?.classList.add('modal_opened');
         });
-      })
-    }, 200);
+        changePassword?.addEventListener('click', () => {
+          document.querySelector('#changeUserPasswordModal')?.classList.add('modal_opened');
+        });
+
+        closeButton?.forEach((button) => {
+          button.addEventListener('click', () => {
+            document.querySelector('#changeUserPasswordModal')?.classList.remove('modal_opened');
+            document.querySelector('#changeUserDataModal')?.classList.remove('modal_opened');
+            document.querySelector('#changeUserAvatarModal')?.classList.remove('modal_opened');
+          });
+        })
+      }, 200);
+      break;
+    }
+    case '/chats': {
+      setTimeout(() => {
+        const addUser = document.querySelector('#tooltip-add-user');
+        const deleteUser = document.querySelector('#tooltip-delete-user');
+        const closeButton = document.querySelectorAll('.modal__close-button');
+
+        addUser?.addEventListener('click', () => {
+          document.querySelector('#addUserModal')?.classList.add('modal_opened');
+        })
+        deleteUser?.addEventListener('click', () => {
+          document.querySelector('#deleteUserModal')?.classList.add('modal_opened');
+        });
+
+        closeButton?.forEach((button) => {
+          button.addEventListener('click', () => {
+            document.querySelector('#addUserModal')?.classList.remove('modal_opened');
+            document.querySelector('#deleteUserModal')?.classList.remove('modal_opened');
+          });
+        })
+      }, 200);
+      break;
+    }
   }
+
   if (root) {
     const pageItem = routes.find(route => route.path === path);
     window.history.pushState({}, '', path)
@@ -137,5 +163,5 @@ document.addEventListener('click', (e: MouseEvent) => {
 });
 
 window.onload = () => {
-  router('/login')
+  router('/chats')
 }
