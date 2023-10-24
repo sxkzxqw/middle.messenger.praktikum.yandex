@@ -2,12 +2,12 @@
 <form class="form__change-password">
   <h1 class="title text-center register__title">Редактирование профиля</h1>
   <div class="register__inputs">
-    {{> Input type='email' name='editProfile-email' placeholder='IvanIvanov@gmail.com' label='Email'}}
-    {{> Input type='text' name='editProfile-login' placeholder='IvanIvanov' label='Логин'}}
-    {{> Input type='text' name='editProfile-firstName' placeholder='Иван' label='Имя'}}
-    {{> Input type='text' name='editProfile-secondName' placeholder='Иванов' label='Фамилия'}}
-    {{> Input type='text' name='editProfile-nameInChat' placeholder='IvanIvanov' label='Имя в чате'}}
-    {{> Input type='phone' name='editProfile-phone' placeholder='+7 (999) 999-99-99' label='Телефон'}}
+    {{> Input type='email' name='email' placeholder='IvanIvanov@gmail.com' label='Email'}}
+    {{> Input type='text' name='login' placeholder='IvanIvanov' label='Логин'}}
+    {{> Input type='text' name='first_name' placeholder='Иван' label='Имя'}}
+    {{> Input type='text' name='second_name' placeholder='Иванов' label='Фамилия'}}
+    {{> Input type='text' name='display_name' placeholder='IvanIvanov' label='Имя в чате'}}
+    {{> Input type='phone' name='phone' placeholder='+7 (999) 999-99-99' label='Телефон'}}
   </div>
   {{> Button type='submit' to='/profile' text='Сохранить'}}
 </form>
