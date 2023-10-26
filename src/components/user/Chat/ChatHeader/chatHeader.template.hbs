@@ -1,0 +1,14 @@
+<div class="chat__header">
+  <div class="chat__header_info">
+    {{#if avatarUrl}}
+    <img src="{{avatarUrl}}" alt="{{name}}" class="chat__header_avatar" />
+    {{else}}
+    <div class="chat__header_avatar chat__header_avatar_default"></div>
+    {{/if}}
+    <p class="chat__header_name">{{name}}</p>
+  </div>
+  <button type='button' class="chat__header_button">
+    {{>UsersTooltip}}
+    <img src={{global "moreIcon" }} />
+  </button>
+</div>

@@ -1,0 +1,16 @@
+<form class="form form__login {{extraClass}}">
+  <h1 class="title text-center register__title">Регистрация</h1>
+  <div class="register__inputs">
+    {{> Input type='email' name='email' placeholder='IvanIvanov@gmail.com' label='Email'}}
+    {{> Input type='text' name='login' placeholder='IvanIvanov' label='Логин'}}
+    {{> Input type='text' name='first_name' placeholder='Иван' label='Имя'}}
+    {{> Input type='text' name='second_name' placeholder='Иванов' label='Фамилия'}}
+    {{> Input type='phone' name='phone' placeholder='+7 (999) 999-99-99' label='Телефон'}}
+    {{> Input type='password' name='password' label='Пароль'}}
+    {{> Input type='password' name='password_again' label='Пароль (еще раз)'}}
+  </div>
+  <div class="register__buttons center column">
+    {{> Button type='submit' to='/chats' extraClass='register__button' text='Зарегестрироваться'}}
+    {{> Link text='Войти' extraClass='link-center register__link' to='/login'}}
+  </div>
+</form>
