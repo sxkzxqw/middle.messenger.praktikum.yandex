@@ -1,0 +1,22 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "max-len": [
+      2,
+      160
+    ],
+    "semi": "warn",
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "prefer-const": "warn",
+    "indent": [
+      "error",
+      2
+    ],
+    "@typescript-eslint/no-unused-vars": 2,
+    "default-case": "off"
+  }
+}
