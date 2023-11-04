@@ -1,4 +1,4 @@
-import Partial from '../../../utils/PartialComonent';
+import { Partial } from '../../../types/BlockTypes';
 import template from './tooltip.template.hbs?raw';
 import './tooltipModule.scss';
 export { TooltipItem } from './TooltipItem';

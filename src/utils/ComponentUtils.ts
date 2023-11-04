@@ -1,8 +1,7 @@
 import Handlebars, { HelperOptions } from 'handlebars';
 import { v4 as uuidv4 } from 'uuid';
 import Block from '../core/Block';
-import { CompileTemplateResult } from '../types/BlockTypes';
-import { Partial } from './PartialComonent';
+import { CompileTemplateResult, Partial } from '../types/BlockTypes';
 
 // регистрация повторно повторяющегося компонента
 export const registerPartial = (Component: typeof Partial) => {
