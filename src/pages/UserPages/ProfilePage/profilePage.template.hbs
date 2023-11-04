@@ -1,25 +1,25 @@
 <div class="profile full-center">
-  {{> BackToChats to='/chats'}}
+  {{{ BackToChats to='/chats'}}}
   <div class="profile__container">
-    {{> Avatar id='profile-change-image' extraClass='profile__avatar-margin'}}
+    {{{ Avatar id='profile-change-image' extraClass='profile__avatar-margin'}}}
     <p class="profile__name">Иван</p>
 
     <ul class="profile__data-fields profile__data-fields_first">
-      {{> ProfileDataField label='Почта' info='pochta@yandex.ru' }}
-      {{> ProfileDataField label='Логин' info='ivanivanov' }}
-      {{> ProfileDataField label='Имя' info='Иван' }}
-      {{> ProfileDataField label='Фамилия' info='Иванов' }}
-      {{> ProfileDataField label='Имя в чате' info='Иван' }}
-      {{> ProfileDataField label='Телефон' info='+7 (999) 999-99-99' }}
+      {{{ ProfileDataField label='Почта' info='pochta@yandex.ru' }}}
+      {{{ ProfileDataField label='Логин' info='ivanivanov' }}}
+      {{{ ProfileDataField label='Имя' info='Иван' }}}
+      {{{ ProfileDataField label='Фамилия' info='Иванов' }}}
+      {{{ ProfileDataField label='Имя в чате' info='Иван' }}}
+      {{{ ProfileDataField label='Телефон' info='+7 (999) 999-99-99' }}}
     </ul>
 
     <ul class="profile__data-fields">
-      {{> ProfileDataField id='profile-change-data' asLink=true text='Изменить данные' }}
-      {{> ProfileDataField id='profile-change-password' asLink=true text='Изменить пароль' }}
-      {{> ProfileDataField asLink=true to='/login' extraClassLink='red' text='Выйти' }}
+      {{{ ProfileDataField id='profile-change-data' asLink=true text='Изменить данные' }}}
+      {{{ ProfileDataField id='profile-change-password' asLink=true text='Изменить пароль' }}}
+      {{{ ProfileDataField asLink=true to='/login' extraClassLink='red' text='Выйти' }}}
     </ul>
   </div>
-  {{>ChangeUserDataModal extraClass='min_modal_width' id='changeUserDataModal'}}
-  {{>ChangePasswordModal extraClass='min_modal_width' id='changeUserPasswordModal'}}
-  {{>ChangeAvatarModal extraClass='min_modal_width' id='changeUserAvatarModal'}}
+  {{{ ChangeUserDataModal extraClass='min_modal_width' id='changeUserDataModal'}}}
+  {{{ ChangePasswordModal extraClass='min_modal_width' id='changeUserPasswordModal'}}}
+  {{{ ChangeAvatarModal extraClass='min_modal_width' id='changeUserAvatarModal'}}}
 </div>

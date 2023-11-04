@@ -1,5 +1,21 @@
+import Block from '../../../core/Block';
 import './chatModule.scss';
-export { default as Chat } from './chat.template.hbs?raw';
+import template from './chat.template.hbs?raw';
+
+export class Chat extends Block {
+  public static name = 'Chat';
+
+  constructor(props: any) {
+    super({
+      ...props,
+    });
+  }
+
+  protected render(): string {
+    return template;
+  }
+}
+
 
 export { ChatHeader } from './ChatHeader';
 export { ChatFooter } from './ChatFooter';

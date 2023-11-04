@@ -1,2 +1,15 @@
+import Block from '../../../core/Block';
 import './profilePageModule.scss';
-export { default as ProfilePage } from './profilePage.template.hbs?raw';
+import template from './profilePage.template.hbs?raw';
+
+export class ProfilePage extends Block {
+  public static Name = 'ProfilePage';
+
+  constructor() {
+    super();
+  }
+
+  protected render(): string {
+    return template;
+  }
+}

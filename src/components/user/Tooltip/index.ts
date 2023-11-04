@@ -1,3 +1,8 @@
+import Partial from '../../../utils/PartialComonent';
+import template from './tooltip.template.hbs?raw';
 import './tooltipModule.scss';
-export { default as Tooltip } from './tooltip.template.hbs?raw';
 export { TooltipItem } from './TooltipItem';
+export class Tooltip extends Partial {
+  protected name = 'Tooltip';
+  protected template = template;
+}

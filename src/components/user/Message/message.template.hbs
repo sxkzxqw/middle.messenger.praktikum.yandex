@@ -1,0 +1,50 @@
+{{#if messageByMe}}
+<li class="message message_{{messageType}}">
+  {{#if imgUrl}}
+  <div class="message_image_container">
+    <img class="message_image" src="{{imgUrl}}" alt="Изображение" />
+  </div>
+  {{/if}}
+
+  {{#if text}}
+  <div class="message_text_container message_text_container__default">
+    <p class="message_text">{{text}}</p>
+  </div>
+  {{/if}}
+
+  {{#if imgUrl}}
+  <div class="message_time">
+    <p class="message_time_text">{{messageTime}}</p>
+  </div>
+  {{else}}
+  <div class="message_time message_time__default">
+    <p class="message_time_text message_time_text__default">{{messageTime}}</p>
+  </div>
+  {{/if}}
+</li>
+{{else}}
+<li class="message message_opponent message_{{messageType}}">
+  {{#if imgUrl}}
+  <div class="message_image_container">
+    <img class="message_image" src="{{imgUrl}}" alt="Изображение" />
+  </div>
+  {{/if}}
+
+  {{#if text}}
+  <div class="message_text_container">
+    <p class="message_text">{{text}}</p>
+  </div>
+  {{/if}}
+
+
+  {{#if imgUrl}}
+  <div class="message_time">
+    <p class="message_time_text">{{messageTime}}</p>
+  </div>
+  {{else}}
+  <div class="message_time message_time__default">
+    <p class="message_time_text message_time_text__default">{{messageTime}}</p>
+  </div>
+  {{/if}}
+</li>
+{{/if}}

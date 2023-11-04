@@ -1,9 +1,9 @@
 import Block from '../../../core/Block';
-import './fileInputModule.scss';
-import template from './fileInput.template.hbs?raw';
+import './messageModule.scss';
+import template from './message.template.hbs?raw';
 
-export class FileInput extends Block {
-  public static name = 'FileInput';
+export class Message extends Block {
+  public static name = 'Message';
 
   constructor(props: any) {
     super({

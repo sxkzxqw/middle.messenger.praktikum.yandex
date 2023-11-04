@@ -14,9 +14,13 @@
     "prefer-const": "warn",
     "indent": [
       "error",
-      2
+      2,
+      {
+        "SwitchCase": 1
+      }
     ],
     "@typescript-eslint/no-unused-vars": 2,
+    "no-restricted-imports": "warn",
     "default-case": "off"
   }
 }

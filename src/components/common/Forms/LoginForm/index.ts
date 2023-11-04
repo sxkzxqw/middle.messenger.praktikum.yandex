@@ -1,2 +1,16 @@
+import Block from '../../../../core/Block';
 import './loginFormModule.scss';
-export { default as LoginForm } from './loginForm.template.hbs?raw';
+import template from './loginForm.template.hbs?raw';
+
+export class LoginForm extends Block {
+  public static name = 'LoginForm';
+  constructor(props: any) {
+    super({
+      ...props,
+    });
+  }
+
+  protected render(): string {
+    return template;
+  }
+}
