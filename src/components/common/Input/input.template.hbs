@@ -2,8 +2,7 @@
   {{#if label}}
   <label class="input__label" for="{{name}}">{{label}}</label>
   {{/if}}
-  <input type="{{type}}" class="input {{extraClass}}" placeholder="{{placeholder}}" name="{{name}}" />
-  {{#if error}}
-  <p class="input__error">{{error}}</p>
-  {{/if}}
+  {{{ InputItem type=type extraClass=extraClass placeholder=placeholder ref="input" name=name onBlur=onBlur
+  onChange=onChange }}}
+  {{{ ErrorText ref="errorText" }}}
 </div>

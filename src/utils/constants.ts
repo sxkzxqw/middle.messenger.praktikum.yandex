@@ -36,11 +36,16 @@ export const FormsComponentsArray: TRegisterComponent[] = [
 
 export const CommonComponentsArray: TRegisterComponent[] = [
   { name: Components.Avatar.name, component: Components.Avatar },
-  { name: Components.FileInput.name, component: Components.FileInput },
-  { name: Components.Input.name, component: Components.Input },
   { name: Components.Button.name, component: Components.Button },
   { name: Components.Link.name, component: Components.Link },
   { name: Components.BackToChats.name, component: Components.BackToChats },
-  { name: Components.ProfileDataField.name, component: Components.ProfileDataField },
   { name: Components.Message.name, component: Components.Message },
+];
+
+export const InputComponentsArray: TRegisterComponent[] = [
+  { name: Components.ErrorText.name, component: Components.ErrorText },
+  { name: Components.InputItem.name, component: Components.InputItem },
+  { name: Components.Input.name, component: Components.Input },
+  { name: Components.FileInput.name, component: Components.FileInput },
+  { name: Components.ProfileDataField.name, component: Components.ProfileDataField },
 ];

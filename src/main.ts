@@ -23,6 +23,7 @@ import {
   ChatComponentsArray,
   CommonComponentsArray,
   FormsComponentsArray,
+  InputComponentsArray,
   ModalComponentsArray,
   SidebarComponentsArray,
   TooltipComponentsArray
@@ -60,11 +61,11 @@ partialComponents.forEach((component) => {
 });
 
 const componentsArray: TRegisterComponent[] = CommonComponentsArray.concat(
-  FormsComponentsArray, ChatComponentsArray, ModalComponentsArray, TooltipComponentsArray, SidebarComponentsArray
+  FormsComponentsArray, ChatComponentsArray, ModalComponentsArray, TooltipComponentsArray, SidebarComponentsArray, InputComponentsArray
 );
 
 componentsArray.forEach((c) => {
   registerComponent(c.name, c.component);
 });
 
-navigate(RouterPages.CHATS);
+navigate(RouterPages.REGISTER);
