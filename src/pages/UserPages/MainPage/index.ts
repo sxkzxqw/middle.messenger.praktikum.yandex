@@ -2,11 +2,14 @@ import './mainPageModule.scss';
 import template from './mainPage.template.hbs?raw';
 import Block from '../../../core/Block';
 
-export class MainPage extends Block {
-  public static Name = 'MainPage';
+interface IMainPageProps {
 
-  constructor() {
-    super();
+}
+export class MainPage extends Block {
+  public static name = 'MainPage';
+
+  constructor(props: IMainPageProps) {
+    super({ ...props });
   }
 
   protected render(): string {

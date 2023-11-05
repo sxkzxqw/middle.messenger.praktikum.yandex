@@ -6,9 +6,6 @@ interface IProps extends Record<string, any> {
   events?: object;
 }
 
-/**
- * Базовый класс компонента
- */
 class Block {
   static EVENTS = {
     INIT: BlockEvents.INIT,
@@ -27,7 +24,7 @@ class Block {
   public children: Record<string, Block>;
 
   constructor(propsChildren?: IProps) {
-    const { props, children } = this._getChildrenAndProps(propsChildren ?? {});
+    const { props, children } = this._getPropsChildren(propsChildren ?? {});
     this.children = children;
     this.props = this._makePropsProxy(props, this);
 
@@ -37,7 +34,7 @@ class Block {
     eventBus.emit(Block.EVENTS.INIT);
   }
 
-  _getChildrenAndProps(childrenAndProps: IProps) {
+  _getPropsChildren(childrenAndProps: IProps) {
     const props: IProps = {};
     const children: Record<string, Block> = {};
 
@@ -161,7 +158,7 @@ class Block {
 
   getElement() {
     if (!this.element) {
-      this.render()
+      this.render();
     }
     return this.element as HTMLElement;
   }

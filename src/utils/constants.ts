@@ -20,6 +20,7 @@ export const ModalComponentsArray: TRegisterComponent[] = [
   { name: Components.ChangePasswordModal.name, component: Components.ChangePasswordModal },
   { name: Components.ChangeUserDataModal.name, component: Components.ChangeUserDataModal },
   { name: Components.UserOperationsModal.name, component: Components.UserOperationsModal },
+  { name: Components.CloseModalButton.name, component: Components.CloseModalButton },
 ];
 
 export const ChatComponentsArray: TRegisterComponent[] = [

@@ -1,7 +1,7 @@
 <div class="profile full-center">
-  {{{ BackToChats to='/chats'}}}
+  {{{ BackToChats onClick=navigateToChats }}}
   <div class="profile__container">
-    {{{ Avatar id='profile-change-image' extraClass='profile__avatar-margin'}}}
+    {{{ Avatar id='profile-change-image' onClick=onChangeAvatar extraClass='profile__avatar-margin'}}}
     <p class="profile__name">Иван</p>
 
     <ul class="profile__data-fields profile__data-fields_first">
@@ -14,12 +14,12 @@
     </ul>
 
     <ul class="profile__data-fields">
-      {{{ ProfileDataField id='profile-change-data' asLink=true text='Изменить данные' }}}
-      {{{ ProfileDataField id='profile-change-password' asLink=true text='Изменить пароль' }}}
-      {{{ ProfileDataField asLink=true to='/login' extraClassLink='red' text='Выйти' }}}
+      {{{ ProfileDataField onClick=onChangeData id='profile-change-data' asLink=true text='Изменить данные' }}}
+      {{{ ProfileDataField onClick=onChangePassword id='profile-change-password' asLink=true text='Изменить пароль' }}}
+      {{{ ProfileDataField onClick=onLogout asLink=true extraClassLink='red' text='Выйти' }}}
     </ul>
   </div>
-  {{{ ChangeUserDataModal extraClass='min_modal_width' id='changeUserDataModal'}}}
-  {{{ ChangePasswordModal extraClass='min_modal_width' id='changeUserPasswordModal'}}}
-  {{{ ChangeAvatarModal extraClass='min_modal_width' id='changeUserAvatarModal'}}}
+  {{{ ChangeUserDataModal onClose=onCloseChangeUserData ref='ChangeUserDataModal' id='changeUserDataModal'}}}
+  {{{ ChangePasswordModal onClose=onCloseChangePassword ref='ChangePasswordModal' id='changeUserPasswordModal'}}}
+  {{{ ChangeAvatarModal onClose=onCloseChangeAvatar ref='ChangeAvatarModal' id='changeUserAvatarModal'}}}
 </div>

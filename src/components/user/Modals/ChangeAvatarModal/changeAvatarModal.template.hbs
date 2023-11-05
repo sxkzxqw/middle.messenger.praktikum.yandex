@@ -1,4 +1,5 @@
-{{#> Modal extraClass=extraClass closeButton=true}}
+{{#> Modal extraClass=extraClass ref='modal'}}
+{{{ CloseModalButton ref='close_button' onClick=closeModal }}}
 <h3 class="changeAvatarModal__title">
   {{#if fileName}}
   Файл загружен

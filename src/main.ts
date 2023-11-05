@@ -68,4 +68,4 @@ componentsArray.forEach((c) => {
   registerComponent(c.name, c.component);
 });
 
-navigate(RouterPages.REGISTER);
+navigate(RouterPages.PROFILE);

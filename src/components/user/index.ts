@@ -10,6 +10,7 @@ export {
   ChangePasswordModal,
   ChangeUserDataModal,
   UserOperationsModal,
+  CloseModalButton,
 } from './Modals';
 export {
   Chat,
