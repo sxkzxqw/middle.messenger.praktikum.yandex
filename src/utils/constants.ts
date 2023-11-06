@@ -1,5 +1,41 @@
 import * as Components from '../components';
 import { TRegisterComponent } from '../types/BlockTypes';
+import addUserIcon from '../../public/icons/addUser.svg';
+import deleteUserIcon from '../../public/icons/addUser.svg';
+import arrowLeftIcon from '../../public/icons/arrowLeftIcon.svg';
+import arrowRightIcon from '../../public/icons/arrowRightIcon.svg';
+import closeIcon from '../../public/icons/close-svgrepo-com.svg';
+import defaultAvatarIcon from '../../public/icons/defaultAvatar.svg';
+import moreIcon from '../../public/icons/moreIcon.svg';
+import profileRightIcon from '../../public/icons/profileRight.svg';
+import readedIcon from '../../public/icons/readedIcon.svg';
+import searchIcon from '../../public/icons/searchIcon.svg';
+import attachIcon from '../../public/icons/attachGroupIcons/attachIcon.svg';
+import fileIcon from '../../public/icons/attachGroupIcons/fileIcon.svg';
+import locationIcon from '../../public/icons/attachGroupIcons/locationIcon.svg';
+import photoIcon from '../../public/icons/attachGroupIcons/photoIcon.svg';
+
+export const imagesArray: Record<string, string> = {
+  addUserIcon,
+  deleteUserIcon,
+  arrowLeftIcon,
+  arrowRightIcon,
+  closeIcon,
+  defaultAvatarIcon,
+  moreIcon,
+  profileRightIcon,
+  readedIcon,
+  searchIcon,
+  attachIcon,
+  fileIcon,
+  locationIcon,
+  photoIcon,
+};
+
+export const partialComponents = [
+  Components.Modal,
+  Components.Tooltip,
+];
 
 export const SidebarComponentsArray: TRegisterComponent[] = [
   { name: Components.SidebarSearch.name, component: Components.SidebarSearch },

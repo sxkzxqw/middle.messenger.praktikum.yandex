@@ -2,10 +2,13 @@ import Block from '../../../core/Block';
 import './chatModule.scss';
 import template from './chat.template.hbs?raw';
 
+interface IChatProps {
+
+}
 export class Chat extends Block {
   public static name = 'Chat';
 
-  constructor(props: any) {
+  constructor(props: IChatProps) {
     super({
       ...props,
     });

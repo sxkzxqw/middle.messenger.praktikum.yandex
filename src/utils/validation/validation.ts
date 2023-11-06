@@ -19,7 +19,11 @@ export const notEmptyValidate = (value?: string) => {
 export const notNumbersValidate = (value?: string) => {
   if (!value) return;
   if (REG_EXP_CHECK_ONLY_NUMBERS.test(value.trim())) return 'Поле не может состоять только из цифр';
-}
+};
+
+export const isStringMatchValidate = (value?: string, value2?: string) => {
+  if (value !== value2) return 'Пароли должны совпадать';
+};
 
 export const emailValidate = (value?: string) => {
   if (!value) return;

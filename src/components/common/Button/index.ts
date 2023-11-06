@@ -7,7 +7,6 @@ export interface IButtonProps {
   variant?: string;
   extraClass?: string;
   type?: string;
-  to?: string;
   onClick?: () => void;
 }
 

@@ -38,6 +38,18 @@ export const navigate = (page: string) => {
           message: 'Что-то пошло не так. Разбираемся.'
         };
         break;
+
+      case RouterPages.PROFILE:
+        context = {
+          data: {
+            email: 'IvanIvanov@gmail.com',
+            display_name: "IvanIvanov",
+            first_name: 'Иван',
+            second_name: 'Иванов',
+            login: "ivanivanov",
+            phone: "89999999999"
+          }
+        };
     }
     const comp = context ? new Component(context) : new Component();
     root.innerHTML = '';

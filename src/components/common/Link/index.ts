@@ -4,7 +4,6 @@ import template from './link.template.hbs?raw';
 
 interface ILinkProps {
   extraClass?: string;
-  to?: string;
   text: string;
   id?: string;
 }

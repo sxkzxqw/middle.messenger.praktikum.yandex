@@ -2,10 +2,13 @@ import Block from '../../../../core/Block';
 import './sidebarHeadModule.scss';
 import template from './sidebarHead.template.hbs?raw';
 
+interface ISidebarHeadingProps {
+
+}
 export class SidebarHeading extends Block {
   public static name = 'SidebarHeading';
 
-  constructor(props: any) {
+  constructor(props: ISidebarHeadingProps) {
     super(props);
     this.props.events = {
       click: this.props.onClick || (() => { })

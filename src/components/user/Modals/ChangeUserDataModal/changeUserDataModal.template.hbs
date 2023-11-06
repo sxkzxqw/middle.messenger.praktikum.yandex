@@ -3,13 +3,24 @@
 <form class="form__change-password">
   <h1 class="title text-center register__title">Редактирование профиля</h1>
   <div class="register__inputs">
-    {{{ Input type='email' name='email' placeholder='IvanIvanov@gmail.com' label='Email'}}}
-    {{{ Input type='text' name='login' placeholder='IvanIvanov' label='Логин'}}}
-    {{{ Input type='text' name='first_name' placeholder='Иван' label='Имя'}}}
-    {{{ Input type='text' name='second_name' placeholder='Иванов' label='Фамилия'}}}
-    {{{ Input type='text' name='display_name' placeholder='IvanIvanov' label='Имя в чате'}}}
-    {{{ Input type='phone' name='phone' placeholder='+7 (999) 999-99-99' label='Телефон'}}}
+    {{{ Input value=data.email type='email' ref='email' validate=validate.email name='email'
+    placeholder='IvanIvanov@gmail.com'
+    label='Email'}}}
+    {{{ Input value=data.login type='text' ref='login' validate=validate.login name='login' placeholder='IvanIvanov'
+    label='Логин'}}}
+    {{{ Input value=data.first_name type='text' ref='first_name' validate=validate.first_name name='first_name'
+    placeholder='Иван'
+    label='Имя'}}}
+    {{{ Input value=data.second_name type='text' ref='second_name' validate=validate.second_name name='second_name'
+    placeholder='Иванов'
+    label='Фамилия'}}}
+    {{{ Input value=data.display_name type='text' ref='chat_name' validate=validate.chat_name name='display_name'
+    placeholder='IvanIvanov'
+    label='Имя в чате'}}}
+    {{{ Input value=data.phone type='phone' ref='phone' validate=validate.phone name='phone' placeholder='+7 (999)
+    999-99-99'
+    label='Телефон'}}}
   </div>
-  {{{ Button type='submit' to='/profile' text='Сохранить'}}}
+  {{{ Button type='submit' text='Сохранить' onClick=onApply }}}
 </form>
 {{/Modal}}

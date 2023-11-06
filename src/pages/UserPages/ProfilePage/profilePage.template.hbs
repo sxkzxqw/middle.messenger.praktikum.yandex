@@ -5,12 +5,12 @@
     <p class="profile__name">Иван</p>
 
     <ul class="profile__data-fields profile__data-fields_first">
-      {{{ ProfileDataField label='Почта' info='pochta@yandex.ru' }}}
-      {{{ ProfileDataField label='Логин' info='ivanivanov' }}}
-      {{{ ProfileDataField label='Имя' info='Иван' }}}
-      {{{ ProfileDataField label='Фамилия' info='Иванов' }}}
-      {{{ ProfileDataField label='Имя в чате' info='Иван' }}}
-      {{{ ProfileDataField label='Телефон' info='+7 (999) 999-99-99' }}}
+      {{{ ProfileDataField label='Почта' info=data.email }}}
+      {{{ ProfileDataField label='Логин' info=data.login }}}
+      {{{ ProfileDataField label='Имя' info=data.first_name }}}
+      {{{ ProfileDataField label='Фамилия' info=data.second_name }}}
+      {{{ ProfileDataField label='Имя в чате' info=data.display_name }}}
+      {{{ ProfileDataField label='Телефон' info=data.phone }}}
     </ul>
 
     <ul class="profile__data-fields">
@@ -19,7 +19,7 @@
       {{{ ProfileDataField onClick=onLogout asLink=true extraClassLink='red' text='Выйти' }}}
     </ul>
   </div>
-  {{{ ChangeUserDataModal onClose=onCloseChangeUserData ref='ChangeUserDataModal' id='changeUserDataModal'}}}
+  {{{ ChangeUserDataModal data=data onClose=onCloseChangeUserData ref='ChangeUserDataModal' id='changeUserDataModal'}}}
   {{{ ChangePasswordModal onClose=onCloseChangePassword ref='ChangePasswordModal' id='changeUserPasswordModal'}}}
   {{{ ChangeAvatarModal onClose=onCloseChangeAvatar ref='ChangeAvatarModal' id='changeUserAvatarModal'}}}
 </div>
