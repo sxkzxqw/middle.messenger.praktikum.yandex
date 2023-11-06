@@ -39,7 +39,6 @@ export class LoginForm extends Block {
           return;
         }
         console.log({
-          component: LoginForm.name,
           ...this.getFieldsValues()
         });
         navigate(RouterPages.CHATS);

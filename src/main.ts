@@ -25,11 +25,16 @@ partialComponents.forEach((component) => {
 });
 
 const componentsArray: TRegisterComponent[] = CommonComponentsArray.concat(
-  FormsComponentsArray, ChatComponentsArray, ModalComponentsArray, TooltipComponentsArray, SidebarComponentsArray, InputComponentsArray
+  FormsComponentsArray,
+  ChatComponentsArray,
+  ModalComponentsArray,
+  TooltipComponentsArray,
+  SidebarComponentsArray,
+  InputComponentsArray
 );
 
 componentsArray.forEach((c) => {
   registerComponent(c.name, c.component);
 });
 
-navigate(RouterPages.PROFILE);
+navigate(RouterPages.LOGIN);

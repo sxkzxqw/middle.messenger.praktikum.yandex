@@ -45,13 +45,11 @@ export class ChangeUserDataModal extends Block {
         },
       },
       onApply: (e: MouseEvent) => {
-        console.log(props);
         e.preventDefault();
         if (!this.validate()) {
           return;
         }
         console.log({
-          component: ChangeUserDataModal.name,
           ...this.getFieldsValues()
         });
       },

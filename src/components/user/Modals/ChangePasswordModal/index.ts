@@ -37,7 +37,6 @@ export class ChangePasswordModal extends Block {
           return;
         }
         console.log({
-          component: ChangePasswordModal.name,
           ...this.getFieldsValues()
         });
       },

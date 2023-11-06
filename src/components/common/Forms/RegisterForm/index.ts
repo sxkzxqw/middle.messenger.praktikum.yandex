@@ -65,7 +65,6 @@ export class RegisterForm extends Block {
           return;
         }
         console.log({
-          component: RegisterForm.name,
           ...this.getFieldsValues()
         });
         navigate(RouterPages.CHATS);
