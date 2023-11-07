@@ -10,7 +10,7 @@ export enum BlockEvents {
   FLOW_RENDER = 'flow:render',
 };
 
-export interface IProps extends Record<string, any> {
+export interface IBlockProps extends Record<string, any> {
   events?: object;
 }
 

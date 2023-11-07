@@ -2,7 +2,7 @@ import { EventBus } from './EventBus';
 import { compileTemplate } from '../utils/ComponentUtils';
 import { BlockEvents, IBlockProps, TListener } from '../types/BlockTypes';
 
-abstract class Block {
+class Block {
   static EVENTS = {
     INIT: BlockEvents.INIT,
     FLOW_CDM: BlockEvents.FLOW_CDM,

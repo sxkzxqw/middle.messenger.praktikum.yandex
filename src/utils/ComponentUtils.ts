@@ -1,7 +1,7 @@
 import Handlebars, { HelperOptions } from 'handlebars';
 import { v4 as uuidv4 } from 'uuid';
-import Block from '../core/Block';
 import { Partial } from '../types/BlockTypes';
+import Block from '../core/Block';
 
 // регистрация повторно повторяющегося компонента
 export const registerPartial = (Component: typeof Partial) => {
@@ -17,7 +17,7 @@ export const compileTemplate = (template: string, context: object) => {
     __refs: {},
   };
 
-  const preparedHTML = Handlebars.compile(template)(data as any);
+  const preparedHTML = Handlebars.compile(template)(data as never);
   return { preparedHTML, children: data.__children, refs: data.__refs };
 };
 

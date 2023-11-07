@@ -22,5 +22,12 @@
     "@typescript-eslint/no-unused-vars": 2,
     "no-restricted-imports": "warn",
     "default-case": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "server/app.js"
+      ]
+    }
+  ]
 }
