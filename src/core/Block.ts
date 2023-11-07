@@ -1,12 +1,8 @@
 import { EventBus } from './EventBus';
 import { compileTemplate } from '../utils/ComponentUtils';
-import { BlockEvents } from '../types/BlockTypes';
+import { BlockEvents, IBlockProps, TListener } from '../types/BlockTypes';
 
-interface IProps extends Record<string, any> {
-  events?: object;
-}
-
-class Block {
+abstract class Block {
   static EVENTS = {
     INIT: BlockEvents.INIT,
     FLOW_CDM: BlockEvents.FLOW_CDM,
@@ -15,7 +11,7 @@ class Block {
     FLOW_RENDER: BlockEvents.FLOW_RENDER,
   };
 
-  protected props: IProps;
+  protected props: IBlockProps;
   protected refs: Record<string, Block | HTMLElement> = {};
 
   private eventBus: () => EventBus;
@@ -23,7 +19,7 @@ class Block {
 
   public children: Record<string, Block>;
 
-  constructor(propsChildren?: IProps) {
+  constructor(propsChildren?: IBlockProps) {
     const { props, children } = this._getPropsChildren(propsChildren ?? {});
     this.children = children;
     this.props = this._makePropsProxy(props, this);
@@ -34,16 +30,12 @@ class Block {
     eventBus.emit(Block.EVENTS.INIT);
   }
 
-  _getPropsChildren(childrenAndProps: IProps) {
-    const props: IProps = {};
+  _getPropsChildren(childrenAndProps: IBlockProps) {
+    const props: IBlockProps = {};
     const children: Record<string, Block> = {};
 
     Object.entries(childrenAndProps).forEach(([key, value]) => {
-      if (value instanceof Block) {
-        children[key] = value;
-      } else {
-        props[key] = value;
-      }
+      value instanceof Block ? children[key] = value : props[key] = value;
     });
 
     return { props, children };
@@ -79,39 +71,41 @@ class Block {
   }
 
   protected init() {
+
   }
 
   _componentDidMount() {
     this.componentDidMount();
   }
 
-  componentDidMount() { }
+  componentDidMount() {
+
+  }
 
   public dispatchComponentDidMount() {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);
     Object.values(this.children).forEach(child => child.dispatchComponentDidMount());
   }
 
-  private _componentDidUpdate(oldProps: IProps, newProps: IProps) {
+  private _componentDidUpdate(oldProps: IBlockProps, newProps: IBlockProps) {
     if (this.componentDidUpdate(oldProps, newProps)) {
       this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
     }
   }
 
-  //@ts-ignore
   //eslint-disable-next-line
-  protected componentDidUpdate(_oldProps: IProps, _newProps: IProps) {
+  protected componentDidUpdate(_oldProps: IBlockProps, _newProps: IBlockProps) {
     return true;
   }
 
   private _componentWillUnmount() {
-    this.componentWillUnmount()
+    this.componentWillUnmount();
     this._removeEvents();
   }
 
   protected componentWillUnmount() { }
 
-  setProps = (nextProps: IProps) => {
+  setProps = (nextProps: IBlockProps) => {
     if (!nextProps) {
       return;
     }
@@ -139,14 +133,14 @@ class Block {
 
     const fragment = htmlTemplateElement.content;
     this.refs = Array.from(fragment.querySelectorAll('[ref]'))
-      .reduce((list, element) => {
+      .reduce((list: { [key: string]: HTMLElement }, element) => {
         const key = element.getAttribute('ref') as string;
         list[key] = element as HTMLElement;
         element.removeAttribute('ref');
         return list;
       }, refs);
 
-    children?.forEach(({ embed }: { embed(node: DocumentFragment): void }) => {
+    children.forEach(({ embed }: { embed(node: DocumentFragment): void }) => {
       embed(htmlTemplateElement.content);
     });
     return htmlTemplateElement.content;
@@ -157,13 +151,11 @@ class Block {
   }
 
   getElement() {
-    if (!this.element) {
-      this.render();
-    }
+    if (!this.element) this.render();
     return this.element as HTMLElement;
   }
 
-  _makePropsProxy(props: IProps, self: Block) {
+  _makePropsProxy(props: IBlockProps, self: Block) {
     return new Proxy(props, {
       get(target, prop) {
         const value = target[prop.toString()];
@@ -172,8 +164,7 @@ class Block {
       set(target, prop, value) {
         const oldTarget = { ...target };
         target[prop.toString()] = value;
-        //@ts-ignore
-        self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget, target);
+        self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget as TListener, target as TListener);
         return true;
       },
       deleteProperty() {

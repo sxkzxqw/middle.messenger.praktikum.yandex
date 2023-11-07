@@ -7,12 +7,12 @@ import { RouterPages } from '../../../../pages/types';
 import { Input } from '../..';
 
 interface ILoginFormProps {
+  onLogin: (e: MouseEvent) => void;
+  onRegister: (e: MouseEvent) => void;
   validate: {
     login: (value?: string) => boolean;
     password: (value?: string) => boolean;
   }
-  onLogin: (e: MouseEvent) => void;
-  onRegister: (e: MouseEvent) => void;
 }
 
 interface FieldsValues {

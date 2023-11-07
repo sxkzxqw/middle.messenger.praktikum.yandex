@@ -10,16 +10,14 @@ export enum BlockEvents {
   FLOW_RENDER = 'flow:render',
 };
 
+export interface IProps extends Record<string, any> {
+  events?: object;
+}
+
 export type TRegisterComponent = {
   name: string;
   component: typeof Block;
 };
-
-export interface CompileTemplateResult {
-  preparedHTML: string;
-  children: Array<{ component: unknown, embed(node: DocumentFragment): void }>;
-  refs: Record<string, Block | HTMLElement>;
-}
 
 export class Partial {
   protected name = '';

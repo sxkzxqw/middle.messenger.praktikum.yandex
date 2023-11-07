@@ -63,14 +63,13 @@ export const phoneValidate = (value?: string) => {
   if (!REG_EXP_PHONE_CHECK.test(trimmed)) return 'Поле должно состоять только из цифр';
 };
 
-export const validateForm = (fieldsValues: object): boolean => {
-  let isValid = true;
-  const checkInvalid = (value?: boolean | string) =>
-    typeof value === 'boolean' && value === false;
-  Object.entries(fieldsValues).forEach(([, value]) => {
-    if (checkInvalid(value)) {
-      isValid = false;
-    }
+export const validateForm = (values: object): boolean => {
+  let isValueCorrect = true;
+
+  const checkInvalid = (value?: boolean | string) => value === false && typeof value === 'boolean';
+  Object.entries(values).forEach(([, value]) => {
+    if (checkInvalid(value)) isValueCorrect = false;
   });
-  return isValid;
+
+  return isValueCorrect;
 };

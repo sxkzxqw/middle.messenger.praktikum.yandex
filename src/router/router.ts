@@ -19,7 +19,7 @@ const pages: PageItem[] = [
  * Функция навигации
  */
 export const navigate = (page: string) => {
-  const root = document.getElementById('root');
+  const root = document.querySelector('#root');
   if (root) {
     const Component = pages.find(p => p.name === page)?.page;
     if (!Component) return;

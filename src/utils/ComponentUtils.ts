@@ -1,7 +1,7 @@
 import Handlebars, { HelperOptions } from 'handlebars';
 import { v4 as uuidv4 } from 'uuid';
 import Block from '../core/Block';
-import { CompileTemplateResult, Partial } from '../types/BlockTypes';
+import { Partial } from '../types/BlockTypes';
 
 // регистрация повторно повторяющегося компонента
 export const registerPartial = (Component: typeof Partial) => {
@@ -10,11 +10,11 @@ export const registerPartial = (Component: typeof Partial) => {
 };
 
 // скомпилировать шаблон
-export const compileTemplate = (template: string, context: object): CompileTemplateResult => {
+export const compileTemplate = (template: string, context: object) => {
   const data = {
     ...context,
-    __children: [] as Array<{ component: unknown, embed(node: DocumentFragment): void }>,
-    __refs: {} as Record<string, Block | HTMLElement>,
+    __children: [],
+    __refs: {},
   };
 
   const preparedHTML = Handlebars.compile(template)(data as any);
@@ -25,8 +25,7 @@ export const compileTemplate = (template: string, context: object): CompileTempl
 export function registerComponent(name: string, Component: typeof Block) {
   if (name in Handlebars.helpers) throw `Компонент уже зарегестрирован - ${name}`;
 
-  Handlebars.registerHelper(name, function (this: unknown, { hash, data, fn }: HelperOptions) {
-
+  Handlebars.registerHelper(name, function (this: object, { hash, data, fn }: HelperOptions) {
     const component = new Component(hash);
     const dataAttribute = `data-id="${uuidv4()}"`;
 
@@ -35,13 +34,13 @@ export function registerComponent(name: string, Component: typeof Block) {
     (data.root.__children = data.root.__children || []).push({
       component,
       embed(node: DocumentFragment) {
-        const placeholder = node.querySelector(`[${dataAttribute}]`);
+        const currentNode = node.querySelector(`[${dataAttribute}]`);
 
-        if (!placeholder) throw new Error(`Атрибут data-id отсуствует - ${name}`);
+        if (!currentNode) throw new Error(`Атрибут data-id отсуствует - ${name}`);
 
-        const element = component.getElement();
-        element.append(...Array.from(placeholder.childNodes));
-        placeholder.replaceWith(element);
+        const currentElement = component.getElement();
+        currentElement.append(...Array.from(currentNode.childNodes));
+        currentNode.replaceWith(currentElement);
       }
     });
 
