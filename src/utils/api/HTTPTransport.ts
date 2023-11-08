@@ -14,6 +14,7 @@ export class HTTPTransport {
       const isGetMethod = method === RequestMethods.GET || !data;
 
       const requestUrl = isGetMethod && !!data ? `${url}${queryStringify(data)}` : url;
+
       xhr.open(method, requestUrl);
 
       if (headers && typeof headers === 'object' && headers !== null) {
@@ -24,24 +25,13 @@ export class HTTPTransport {
 
       xhr.timeout = timeout || defaultTimeoutTime;
 
-      xhr.onload = function () {
-        resolve(xhr);
-      };
-      xhr.onabort = function () {
-        reject(new Error('Запрос отклонен клиентом'));
-      };
-      xhr.onerror = function () {
-        reject(new Error('Ошибка запроса'));
-      };
-      xhr.ontimeout = function () {
-        reject(new Error(`Запрос отклонен. Время ожидания - ${timeout || defaultTimeoutTime}мс вышло`));
-      };
+      xhr.onload = () => { resolve(xhr); };
+      xhr.onabort = () => { reject(new Error('Запрос отклонен клиентом')); };
+      xhr.onerror = () => { reject(new Error('Ошибка запроса')); };
+      xhr.ontimeout = () => { reject(new Error(`Запрос отклонен. Время ожидания - ${timeout || defaultTimeoutTime}мс вышло`)); };
 
-      if (isGetMethod) {
-        xhr.send();
-      } else {
-        xhr.send(JSON.stringify(data));
-      }
+      if (isGetMethod) xhr.send();
+      if (!isGetMethod) xhr.send(JSON.stringify(data));
     });
   };
 }

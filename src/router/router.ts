@@ -3,7 +3,7 @@ import { RouterPages } from '../pages/types';
 
 interface PageItem {
   name: string;
-  page: any;
+  page: typeof Pages.LoginPage | typeof Pages.RegisterPage | typeof Pages.ErrorPage | typeof Pages.ProfilePage | typeof Pages.MainPage;
 }
 
 const pages: PageItem[] = [
@@ -23,7 +23,7 @@ export const navigate = (page: string) => {
   if (root) {
     const Component = pages.find(p => p.name === page)?.page;
     if (!Component) return;
-    let context: any = null;
+    let context: unknown = null;
     switch (page) {
       case RouterPages.ERROR_404:
         context = {
@@ -51,7 +51,7 @@ export const navigate = (page: string) => {
           }
         };
     }
-    const comp = context ? new Component(context) : new Component();
+    const comp = context ? new Component(context) : new Component({});
     root.innerHTML = '';
     root.append(comp.getElement()!);
   }
