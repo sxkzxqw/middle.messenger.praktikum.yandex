@@ -1,15 +1,12 @@
 .sidebar__chat {
   display: flex;
   flex-direction: row;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
   height: 78px;
   justify-content: space-between;
   border-top: 1px solid var(--light-gray);
   cursor: pointer;
   user-select: none;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 12px 10px;
 
   &.selected {
     background: var(--light-blue);

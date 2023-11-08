@@ -10,6 +10,7 @@ export {
   ChangePasswordModal,
   ChangeUserDataModal,
   UserOperationsModal,
+  CloseModalButton,
 } from './Modals';
 export {
   Chat,
@@ -25,6 +26,7 @@ export {
   ChatTooltip,
   UsersTooltip,
 } from './Tooltips';
+export { Message } from './Message';
 export { BackToChats } from './BackToChats';
 export { Avatar } from './Avatar';
 export { ProfileDataField } from './ProfileDataField';

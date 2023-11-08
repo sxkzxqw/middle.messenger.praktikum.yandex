@@ -1,11 +1,12 @@
 <form class="form form__login {{extraClass}}">
   <h1 class="title login__title">Вход</h1>
   <div class="login__inputs">
-    {{> Input type='email' name='login' placeholder='Email' label='Логин'}}
-    {{> Input type='password' name='password' placeholder='Пароль' label='Пароль'}}
+    {{{ Input type='email' name='login' placeholder='Email' ref="login" validate=validate.login label='Логин'}}}
+    {{{ Input type='password' name='password' placeholder='Пароль' ref="password" validate=validate.password
+    label='Пароль'}}}
   </div>
   <div class="login__buttons center column">
-    {{> Button type='submit' to='/chats' extraClass='login__button' text='Авторизоваться'}}
-    {{> Link text='Нет аккаунта?' extraClass='link-center login__link' to='/register'}}
+    {{{ Button type='submit' extraClass='login__button' text='Авторизоваться' onClick=onLogin }}}
+    {{{ Link text='Нет аккаунта?' extraClass='link-center login__link' onClick=onRegister }}}
   </div>
 </form>

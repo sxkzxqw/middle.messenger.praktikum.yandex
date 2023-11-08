@@ -1,3 +1,21 @@
-<div class="chat__content chat__content_no_messages">
+<div class="chat__content">
+  {{#if noMessages}}
   Пока нет сообщений
+  {{else}}
+  <ul class="chat__content-messages">
+    {{{ Message messageType="textImage" messageTime="11:56"
+    imgUrl="https://images.wallpaperscraft.ru/image/single/kot_morda_agressiia_56702_2560x1600.jpg" text="123123123123
+    123123123123123123123123123123123123" }}}
+    {{{ Message messageType="image" messageTime="11:56"
+    imgUrl="https://images.wallpaperscraft.ru/image/single/kot_morda_agressiia_56702_2560x1600.jpg" }}}
+    {{{ Message messageType="text" messageTime="11:56" text="123123123123 123123123123123123123123123123123123" }}}
+    {{{ Message messageType="textImage" messageTime="11:56"
+    imgUrl="https://images.wallpaperscraft.ru/image/single/kot_morda_agressiia_56702_2560x1600.jpg" text="123123123123
+    123123123123123123123123123123123123" }}}
+    {{{ Message messageType="image" messageTime="11:56"
+    imgUrl="https://images.wallpaperscraft.ru/image/single/kot_morda_agressiia_56702_2560x1600.jpg" }}}
+    {{{ Message messageType="text" messageTime="11:56" messageByMe=true text="123123123123
+    123123123123123123123123123123123123" }}}
+  </ul>
+  {{/if}}
 </div>
