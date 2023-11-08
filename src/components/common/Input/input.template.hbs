@@ -1,0 +1,8 @@
+<div class="input__container">
+  {{#if label}}
+  <label class="input__label" for="{{name}}">{{label}}</label>
+  {{/if}}
+  {{{ InputItem value=value type=type extraClass=extraClass placeholder=placeholder ref="input" name=name onBlur=onBlur
+  onChange=onChange }}}
+  {{{ ErrorText ref="errorText" }}}
+</div>

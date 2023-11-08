@@ -1,6 +1,6 @@
-{{#> Tooltip position='bottom-right'}}
-{{> TooltipItem text='Добавить пользователя' name='tooltip-add-user' id='tooltip-add-user'
-imageUrl='../../../../../public/icons/addUser.svg' }}
-{{> TooltipItem text='Удалить пользователя' name='tooltip-delete-user' id='tooltip-delete-user'
-imageUrl='../../../../../public/icons/deleteUser.svg' }}
-{{/ Tooltip}}
+{{#> Tooltip position='bottom-right' extraClass=extraClass }}
+{{{ TooltipItem text='Добавить пользователя' name='tooltip-add-user' id='tooltip-add-user'
+imageUrl=(global "addUserIcon") }}}
+{{{ TooltipItem text='Удалить пользователя' name='tooltip-delete-user' id='tooltip-delete-user'
+imageUrl=(global "deleteUserIcon") }}}
+{{/Tooltip}}

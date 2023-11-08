@@ -1,8 +1,8 @@
-{{#> Tooltip}}
-{{> TooltipItem text='Фото или видео' asFile=true name='tooltip-photo' id='tooltip-photo'
-imageUrl='../../../../../public/icons/attachGroupIcons/photoIcon.svg' }}
-{{> TooltipItem text='Файл' asFile=true name='tooltip-file' id='tooltip-file'
-imageUrl='../../../../../public/icons/attachGroupIcons/fileIcon.svg' }}
-{{> TooltipItem text='Локация' name='tooltip-location' id='tooltip-location'
-imageUrl='../../../../../public/icons/attachGroupIcons/locationIcon.svg' }}
-{{/ Tooltip}}
+{{#> Tooltip extraClass=extraClass}}
+{{{ TooltipItem text='Фото или видео' asFile=true name='tooltip-photo' id='tooltip-photo'
+imageUrl=(global "photoIcon") }}}
+{{{ TooltipItem text='Файл' asFile=true name='tooltip-file' id='tooltip-file'
+imageUrl=(global "fileIcon") }}}
+{{{ TooltipItem text='Локация' name='tooltip-location' id='tooltip-location'
+imageUrl=(global "locationIcon") }}}
+{{/Tooltip}}

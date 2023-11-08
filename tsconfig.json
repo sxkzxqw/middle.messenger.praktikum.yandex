@@ -9,14 +9,15 @@
       "DOM.Iterable"
     ],
     "skipLibCheck": true,
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    /* Linting */
     "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true

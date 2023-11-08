@@ -1,0 +1,25 @@
+<div class="profile full-center">
+  {{{ BackToChats onClick=navigateToChats }}}
+  <div class="profile__container">
+    {{{ Avatar id='profile-change-image' onClick=onChangeAvatar extraClass='profile__avatar-margin'}}}
+    <p class="profile__name">Иван</p>
+
+    <ul class="profile__data-fields profile__data-fields_first">
+      {{{ ProfileDataField label='Почта' info=data.email }}}
+      {{{ ProfileDataField label='Логин' info=data.login }}}
+      {{{ ProfileDataField label='Имя' info=data.first_name }}}
+      {{{ ProfileDataField label='Фамилия' info=data.second_name }}}
+      {{{ ProfileDataField label='Имя в чате' info=data.display_name }}}
+      {{{ ProfileDataField label='Телефон' info=data.phone }}}
+    </ul>
+
+    <ul class="profile__data-fields">
+      {{{ ProfileDataField onClick=onChangeData id='profile-change-data' asLink=true text='Изменить данные' }}}
+      {{{ ProfileDataField onClick=onChangePassword id='profile-change-password' asLink=true text='Изменить пароль' }}}
+      {{{ ProfileDataField onClick=onLogout asLink=true extraClassLink='red' text='Выйти' }}}
+    </ul>
+  </div>
+  {{{ ChangeUserDataModal data=data onClose=onCloseChangeUserData ref='ChangeUserDataModal' id='changeUserDataModal'}}}
+  {{{ ChangePasswordModal onClose=onCloseChangePassword ref='ChangePasswordModal' id='changeUserPasswordModal'}}}
+  {{{ ChangeAvatarModal onClose=onCloseChangeAvatar ref='ChangeAvatarModal' id='changeUserAvatarModal'}}}
+</div>

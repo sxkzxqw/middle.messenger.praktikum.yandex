@@ -2,8 +2,7 @@
   {{#if avatarUrl}}
   <img alt="Изображение профиля" class="profile__avatar" src="{{avatarUrl}}" />
   {{else}}
-  <img alt="Изображения профиля" class="profile__avatar profile__avatar_default"
-    src="../../../../public/icons/defaultAvatar.svg" />
+  <img alt="Изображения профиля" class="profile__avatar profile__avatar_default" src={{global "defaultAvatarIcon" }} />
   {{/if}}
   <p class="profile__avatar_change">Поменять изображение</p>
 </div>

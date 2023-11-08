@@ -1,10 +1,10 @@
 <div class="chat__footer">
-  <button type="button" class="chat__footer_button">
-    {{>ChatTooltip}}
-    <img src="../../../../../public/icons/attachGroupIcons/attachIcon.svg" alt="Прикрепить" />
+  <button type="button" ref="attach_button" class="chat__footer_button">
+    {{{ ChatTooltip ref='chat_tooltip' }}}
+    <img src={{global "attachIcon" }} alt="Прикрепить" />
   </button>
-  {{> Input type='text' placeholder='Сообщение' name='message' extraClass='chat__footer_message-input'}}
+  {{{ Input type='text' placeholder='Сообщение' name='message' extraClass='chat__footer_message-input' }}}
   <button type="button" class="chat__footer_send-button">
-    <img src="../../../../../public/icons/arrowRightIcon.svg" alt="Отправить" />
+    <img src={{global "arrowRightIcon" }} alt="Отправить" />
   </button>
 </div>
