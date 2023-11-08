@@ -15,9 +15,6 @@ const pages: PageItem[] = [
   { name: RouterPages.PROFILE, page: Pages.ProfilePage },
 ];
 
-/**
- * Функция навигации
- */
 export const navigate = (page: string) => {
   const root = document.querySelector('#root');
   if (root) {
