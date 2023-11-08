@@ -1,5 +1,4 @@
 import Block from '../../../../core/Block';
-import './changeUserDataModalModule.scss';
 import template from './changeUserDataModal.template.hbs?raw';
 import { checkNameValidate, emailValidate, loginValidate, phoneValidate, requiredValidate, validateForm } from '../../../../utils/validation/validation';
 import { Input } from '../../..';

@@ -1,5 +1,5 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": "stylelint-config-standard-scss",
   "ignoreFiles": [
     "build/*",
     "node_modules/*",
@@ -7,5 +7,18 @@
   ],
   "plugins": [
     "stylelint-scss"
-  ]
+  ],
+  "rules": {
+    "selector-class-pattern": null,
+    "no-empty-source": null,
+    "color-hex-length": "long",
+    "shorthand-property-no-redundant-values": null,
+    "length-zero-no-unit": null,
+    "color-function-notation": null,
+    "declaration-empty-line-before": null,
+    "font-family-name-quotes": null,
+    "custom-property-empty-line-before": null,
+    "no-descending-specificity": null,
+    "import-notation": null
+  }
 }
