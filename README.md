@@ -1,7 +1,7 @@
 ### Проект - Веб-мессенджер
 
 ## Ссылка на проект:
-https://deploy-preview-4--yandex-middle-messenger-sxkzxqw.netlify.app/
+https://deploy--yandex-middle-messenger-sxkzxqw.netlify.app/
 
 ## Роутинг:
 * Изначально вы попадаете на страницу чатов, откуда можно перейти на страницу профиля или страницы ошибок
